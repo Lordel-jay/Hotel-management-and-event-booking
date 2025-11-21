@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root{
+    --primary-color: #0cb8a9;
+    --secondary-color: #ffb400;
+    --bg-color: #f3f4f6;
+    --text-color: #333;
+    --max-width: 120rem;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear all;
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding: 90rem;
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #0cb8a9;
+    border-radius: 1rem;
+}
+section{
+    padding: 5rem 0;
+}
+.heading{
+    font-size: 4rem;
+    color: var(--text-color);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--primary-color);
+    border-radius: 15rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.btn:hover{
+    background: var(--secondary-color);
+}
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 2rem 9%;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: bolder;
+    position: relative;
+}
+.logo img{
+    height: 3rem;
+    width: 1rem;
+}
+header.logo i{
+    position: absolute;
+    color: var(--primary-color);
+    padding-right: 0.5rem;
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 1px;
+}
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--black);
+    margin: 2rem;
+}
+.header .navbar a:hover{
+    color: var(--primary-color);
+}
+#menu-btn{
+    font-size: 3rem;
+    color: var(--text-black);
+    cursor: pointer;
+    display: none;
+    margin-left: 1.7rem
+}
+#menu-btn:hover{
+    color: var(--primary-color);
+}
+.home{
+    padding: 10rem;
+}
+.home .slide{
+    min-height: 100vh;
+    display: flex;
+    align-items: center !important;
+    background-size: cover !important;
+    background-position: center;
+    justify-content: center !important;
+    z-index: -1;
+}
+.home .slide .content{
+    width: 80trm;
+    text-align: center;
+}
+.content .btn{
+    margin-left: 10px;
+    background: var(--primary-color);
+    color: var(--white);
+}
+.content .btn:hover{
+    background: var(--secondary-color);
+    color: var(--white);
+}
+.home .slide .content {
+    font-size: 2rem;
+    color: var(--black);
+    background: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: lighter;
+}
+.swiper-button-next, .swiper-button-prev{
+    color: var(--black);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    color: var(--black);
+    box-shadow: var(--box-shadow);
+    top: 50% !important;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+    background: var(--primary-color);
+    color: var(--white);
+}
+.swiper-button-next::after, .swiper-button-prev::after{
+    font-size: 2rem;
+}
