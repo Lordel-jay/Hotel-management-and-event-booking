@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Analytics | LORDEL Co.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style1.css" />
+    </head>
+    <style>
+        .text-gradient { 
+          background: linear-gradient(90deg,#ff6a00,#ee0979);
+             -webkit-background-clip:text;
+              -webkit-text-fill-color:transparent;
+               font-weight: bold;
+            }
+        .chic-card { 
+            border-radius: 20px;
+             background: linear-gradient(120deg,#fff1eb,#ace0f9 90%);
+              box-shadow:0 8px 30px 0 rgba(60,60,180,0.16); }
+        .card-header { 
+            background: linear-gradient(90deg,#e96443,#904e95 70%); 
+            color: #fff;
+             font-weight: bold;
+            }
+        .chart-queen-glow {
+             box-shadow:0 0 30px 0 #5f0732b0; 
+             border-radius:15px;}
+        .btn-royal { 
+            background: linear-gradient(90deg,#00c6ff,#0072ff); 
+            color:#fff;
+        }
+    </style>
+
+<body>
+  <!-- Navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">LORDEL & Co.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index1.html">Home</a></li>
+          
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+    <!-- Reuse your admin nav-->
+
+    <div class="container mt-5 pt-5">
+        <h2 class="mb-4 text-gradient"><i class="bi bi-hdd-stack"></i> Events Analytics</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card chic-card chart-queen-glow">
+                    <div class="card-header">Events Per Type (Bar)</div>
+                    <div class="card-body">
+                        <canvas id="eventsBarChart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card chic-card chart-queen-glow">
+                    <div class="card-header">Participation Split (Pie)</div>
+                    <div class="card-body">
+                        <canvas id="eventsPieChart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-end mt-5">
+            <button class="btn btn-royal"><i class="bi bi-plus-circle"></i> Add New Event</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap + Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.min.js"></script>
+    <script>
+        // Bar Chart (Events Per Type)
+        new Chart(document.getElementById('eventsBarChart').getContext('2d'), {
+          type: 'bar',
+          data: {
+            labels: ['Weddings', 'Concerts', 'Graduations', 'Seminars', 'Galas'],
+            datasets: [{
+              label: 'Events Count',
+              data: [12, 19, 7, 5, 3],
+              backgroundColor: [
+                '#ee0979', '#ff6a00', '#00c6ff', '#0072ff', '#904e95'
+              ],
+              borderRadius: 10
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {display: false},
+              title: {display: true, text: 'Distribution By Event Type', color: '#ff6a00', font: {size: 18, weight: 'bold'}}
+            },
+            scales: {
+              x: { grid: {color: '#ffe2e2'} },
+              y: { beginAtZero: true, grid: {color: '#f7e4e4'} }
+            }
+          }
+        });
+
+        // Pie Chart (Participation Split)
+        new Chart(document.getElementById('eventsPieChart').getContext('2d'), {
+          type: 'pie',
+          data: {
+            labels: ['Attendees', 'Organizers', 'Staff', 'VIP'],
+            datasets: [{
+              data: [300, 40, 55, 10],
+              backgroundColor: [
+                '#00c6ff', '#ff6a00', '#ee0979', '#904e95'
+              ],
+              borderWidth: 3,
+              borderColor: '#fff'
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {position: 'bottom', labels: {color: '#863779', font:{weight:'bold'}}},
+              title: {display: true, text: 'Participation Split', color: '#ee0979', font: {size: 18, weight: 'bold'}}
+            }
+          }
+        });
+    </script>
+
+<footer>
+        <div class="footer_bar">
+        Copyright &copy; 2024 LORDEL&Co. All rights reserved.
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
+s
